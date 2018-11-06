@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.shiln.user.mapper.UserMapper" >
+    <!-- 查询列表 -->
+    <select id="getList" resultType="com.shiln.user.bean.User">
+        select * from tbl_user
+    </select>
+
+    <select id="getListParams" resultType="com.shiln.user.bean.User">
+        select * from tbl_user where userID in (${userIDs}) and telephone=0
+    </select>
+
+    <select id="getUserByID" parameterType="java.lang.Integer" resultType="com.shiln.user.bean.User">
+        select * from tbl_user where userID = #{userID}
+    </select>
+
+    <insert id="add" parameterType="com.shiln.user.bean.User" useGeneratedKeys="true" keyProperty="userID">
+        insert into tbl_user (userName,alias,address,telephone,sex,card,createTime) VALUES
+        (#{userName},#{alias},#{address},#{telephone},#{sex},#{card},date_format( now() ,'%Y%m%d%H%i%s'))
+    </insert>
+
+</mapper>

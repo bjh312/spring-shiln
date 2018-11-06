@@ -1,0 +1,9 @@
+{
+  "groups": [{
+    "name": "datasource",
+    "type": "com.shiln.user.config.DBSettings",
+    "sourceType": "com.shiln.user.config.DBSettings"
+  }],
+  "properties": [],
+  "hints": []
+}

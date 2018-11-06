@@ -1,0 +1,35 @@
+spring:
+  profiles.active: test
+
+---
+
+spring:
+  profiles: test
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+  datasource:
+    url: jdbc:mysql://39.106.28.99:3306/db_order?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    username: root
+    password: Bjh123456
+    driver-class-name: com.mysql.jdbc.Driver
+    initial-size: 10
+    max-active: 100
+    min-idle: 2
+    validation-query: SELECT 1
+  rabbitmq:
+      username: bao
+      password: bao
+      host: 39.106.28.99
+      port: 5672
+      listener:
+        retry:
+          enabled: true
+          initial-interval: 2000
+          max-attempts: 2
+          multiplier: 1.5
+          max-interval: 5000
+
+mybatis:
+  config-location: classpath:mybatis-config.xml
