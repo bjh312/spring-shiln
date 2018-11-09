@@ -10,7 +10,7 @@ spring:
   resources:
     add-mappings: false
   datasource:
-    url: jdbc:mysql://39.106.28.99:3306/db_order?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
+    url: jdbc:mysql://127.0.0.1:3306/db_order?useUnicode=true&characterEncoding=UTF-8&useSSL=false&autoReconnect=true&failOverReadOnly=false
     username: root
     password: Bjh123456
     driver-class-name: com.mysql.jdbc.Driver
@@ -21,7 +21,7 @@ spring:
   rabbitmq:
       username: bao
       password: bao
-      host: 39.106.28.99
+      host: 127.0.0.1
       port: 5672
       listener:
         retry:
